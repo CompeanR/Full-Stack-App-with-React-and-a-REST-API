@@ -1,4 +1,4 @@
-# REST Api 
+# Full Stack App with React and a REST API 
 
 ### Table of Contents
 You're sections headers will be used to reference location of destination.
