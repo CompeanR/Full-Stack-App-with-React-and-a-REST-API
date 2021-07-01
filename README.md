@@ -11,7 +11,7 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-This is a REST API created using express.
+This is a Full Stack App with React and REST API
 
 #### Technologies
 
