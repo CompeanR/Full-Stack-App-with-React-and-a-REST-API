@@ -20,25 +20,25 @@ export default (props) => {
   }
 
   return (
-    <main>
+    <>
         <ErrorsDisplay errors={errors} />
         <form onSubmit={handleSubmit}>
             {elements()}
-            <button className="button" type="submit">Sign In</button>
-            <button className="button button-secondary" onClick="event.preventDefault(); location.href='index.html';">Cancel</button>
+            <button className="button" type="submit">{submitButtonText}</button>
+            <button className="button button-secondary" onClick={handleCancel}>Cancel</button>
         </form>
-    </main>
+    </>
   );
-}
+};
 
-function ErrorsDisplay({ errors }) {
+export function ErrorsDisplay({ errors }) {
   let errorsDisplay = null;
 
   if (errors.length) {
     errorsDisplay = (
       <div>
-        <h2 className="validation--errors--label">Validation errors</h2>
         <div className="validation-errors">
+          <h3>Validation Errors</h3>
           <ul>
             {errors.map((error, i) => <li key={i}>{error}</li>)}
           </ul>

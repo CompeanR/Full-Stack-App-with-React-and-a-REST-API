@@ -6,7 +6,8 @@ import ReactMarkdown from 'react-markdown'
 export default class CourseDetail extends Component {
     state = {
         course: [],
-        user: []
+        user: [],
+        errors: []
     };
     
     componentDidMount() {
@@ -23,27 +24,13 @@ export default class CourseDetail extends Component {
 
 
     render() {
-        console.log(this.props.history.location.pathname)
-        console.log(this.state.course)
         return (
             <>
-                <header>
-                    <div className="wrap header--flex">
-                        <h1 className="header--logo"><a href="index.html">Courses</a></h1>
-                        <nav>
-                            <ul className="header--signedin">
-                                <li>{`Welcome, ${this.state.user.firstName} ${this.state.user.lastName}!`}</li>
-                                <li><Link to={'/courses/signout'} href="sign-out.html">Sign Out</Link></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-                
                 <main>
                     <div className="actions--bar">
                         <div className="wrap">
-                            <Link to={'/courses/update'} className="button" href="update-course.html">Update Course</Link>
-                            <Link to={'/courses/delete'} className="button" href="#">Delete Course</Link>
+                            <Link to={`/courses/${this.props.match.params.id}/update`} className="button" href="update-course.html">Update Course</Link>
+                            <button className="button" href="#" onClick={() => this.delete()}>Delete Course</button>
                             <Link to={'/'} className="button button-secondary" href="index.html">Return to List</Link>
                         </div>
                     </div>
@@ -59,6 +46,7 @@ export default class CourseDetail extends Component {
 
                                     <ReactMarkdown>{`${this.state.course.description}`}</ReactMarkdown>
                                 </div>
+                                
                                 <div>
                                     <h3 className="course--detail--title">Estimated Time</h3>
                                     <p>{this.state.course.estimatedTime}</p>
@@ -74,5 +62,28 @@ export default class CourseDetail extends Component {
                 </main>
             </>
         );
+    };
+
+    delete = () => {
+        const { context } = this.props;
+        const authUser = context.authenticatedUser;
+
+        const id = this.state.course.id
+
+        context.data.deleteCourse(authUser.emailAddress, authUser.password, id)
+            .then(errors => {
+                if (errors.length) {
+                    this.setState({ errors });
+                }
+
+                else {
+                    this.props.history.push('/');
+                }
+            })
+            
+            .catch(err => {
+                console.log(err);
+                this.props.history.push('/error')
+            });
     };
 };

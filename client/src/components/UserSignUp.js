@@ -22,7 +22,6 @@ export default class UserSignUp extends Component {
       errors,
     } = this.state;
 
-    console.log(this.props)
     return (
         <div className="form--centered">
           <h1>Sign Up</h1>
@@ -92,15 +91,19 @@ export default class UserSignUp extends Component {
     const { context } = this.props;
 
     const {
-      name,
-      username,
+      firstName,
+      lastName,
+      emailAddress,
       password,
+      confirmPassword
     } = this.state;
 
     const user = {
-      name,
-      username,
-      password
+      firstName,
+      lastName,
+      emailAddress,
+      password,
+      confirmPassword
     }
 
     context.data.createUser(user)
@@ -108,9 +111,9 @@ export default class UserSignUp extends Component {
         if (errors.length) {
           this.setState({ errors });
         } else {
-          context.actions.signIn(username, password)
+          context.actions.signIn(emailAddress, password)
             .then(() => {
-              this.props.history.push('/authenticated')
+              this.props.history.push('/')
             })
         }
       })
