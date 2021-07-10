@@ -29,12 +29,11 @@ export default class Data {
     }
 
     return fetch(url, options);
-  }
+  };
 
   // Method that generates a GET request to the API
   async getUser(emailAddress, password) {
     const response = await this.api(`/users`, 'GET', null, true, { emailAddress, password });
-
     // If the response is successful return the user data
     if (response.status === 200) {
       return response.json().then(data => data);

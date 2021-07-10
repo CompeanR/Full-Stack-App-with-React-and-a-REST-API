@@ -74,7 +74,7 @@ export default class UserSignUp extends Component {
           </p>
         </div>
     );
-  }
+  };
 
   change = (event) => {
     const name = event.target.name;
@@ -85,26 +85,13 @@ export default class UserSignUp extends Component {
         [name]: value
       };
     });
-  }
+  };
 
   submit = () => {
     const { context } = this.props;
 
-    const {
-      firstName,
-      lastName,
-      emailAddress,
-      password,
-      confirmPassword
-    } = this.state;
-
-    const user = {
-      firstName,
-      lastName,
-      emailAddress,
-      password,
-      confirmPassword
-    }
+    const { firstName, lastName, emailAddress, password, confirmPassword } = this.state;
+    const user = { firstName, lastName, emailAddress, password, confirmPassword };
 
     context.data.createUser(user)
       .then(errors => {
@@ -119,7 +106,7 @@ export default class UserSignUp extends Component {
       })
       .catch( err => {
         console.log(err)
-        this.props.history.push('/error'); // push to history stack
+        this.props.history.push('/error'); 
       })
   }
 

@@ -1,8 +1,10 @@
+// Import statements
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 export default class Header extends Component {
     render() {
+        // Destructuring context
         const { context } = this.props;
         const authUser = context.authenticatedUser;
 
@@ -11,7 +13,8 @@ export default class Header extends Component {
                 <div className="wrap header--flex">
                     <h1 className="header--logo"><Link to={'/'} href="index.html">Courses</Link></h1>
                     <nav>
-                        {
+                        {/** If user is sign in switch the header */}
+                        {   
                             authUser ?
                             <>
                                 <ul>

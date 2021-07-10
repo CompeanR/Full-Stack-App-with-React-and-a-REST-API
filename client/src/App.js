@@ -6,6 +6,7 @@ import {
   Switch
 } from 'react-router-dom';
 
+// Import main components
 import Courses from './components/Courses';
 import CourseDetail from './components/CourseDetail';
 import Header from './components/Header';
@@ -17,6 +18,14 @@ import UserSignOut from './components/UserSignOut';
 
 // Import the HOC function
 import withContext from './Context';
+
+// Import Private Route
+import PrivateRoute from './PrivateRoute';
+
+// Import Error components
+import NotFound from './components/NotFound';
+import Forbidden from './components/Forbidden';
+import UnhandledError from './components/UnhandledError';
 
 // Passing context to all components
 const UserSignUpWithContext = withContext(UserSignUp);
@@ -36,12 +45,19 @@ const App = () => (
       {/** All the routes rendered with context */}
       <Switch>
         <Route exact path="/" component={CoursesWithContext} />
-        <Route exact path="/courses/create" component={CreateCourseWithContext} />
+        <PrivateRoute exact path="/courses/create" component={CreateCourseWithContext} />
         <Route exact path="/courses/:id" component={CourseDetailWithContext} />
         <Route exact path="/signin" component={UserSignInWithContext} />
         <Route exact path="/signup" component={UserSignUpWithContext} />
         <Route exact path="/signout" component={UserSignOutWithContext} />
-        <Route exact path="/courses/:id/update" component={UpdateCourseWithContext} />
+        <PrivateRoute exact path="/courses/:id/update" component={UpdateCourseWithContext} />
+        <Route exact path="/notfound" component={NotFound} />
+        <Route exact path="/forbidden" component={Forbidden} />
+        <Route exact path="/unhandledError" component={UnhandledError} />
+
+        {/** If any route match, "NotFound" component will render */}
+        <Route component={NotFound} />
+        
       </Switch>
 
     </div>

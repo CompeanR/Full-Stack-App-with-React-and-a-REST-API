@@ -1,19 +1,19 @@
+// Import statements
 import React from 'react';
 
-export default (props) => {
-  const {
-    cancel,
-    errors,
-    submit,
-    submitButtonText,
-    elements,
-  } = props;
+// Stateless Component that generates a Form
+const Form = (props) => {
 
+  // Destructuring props
+  const { cancel, errors, submit, submitButtonText, elements, } = props;
+
+  // Function that submit the form
   function handleSubmit(event) {
     event.preventDefault();
     submit();
   }
 
+  // Function that cancel and redirect user to main page
   function handleCancel(event) {
     event.preventDefault();
     cancel();
@@ -31,6 +31,7 @@ export default (props) => {
   );
 };
 
+// Stateless Component that render each error from the API response
 export function ErrorsDisplay({ errors }) {
   let errorsDisplay = null;
 
@@ -48,4 +49,6 @@ export function ErrorsDisplay({ errors }) {
   }
 
   return errorsDisplay;
-}
+};
+
+export default Form;
