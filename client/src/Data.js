@@ -48,6 +48,24 @@ export default class Data {
       throw new Error();
     };
   };
+
+  // Method that generates a GET request to the API
+  async getCourse(course) {
+    const response = await this.api(`/courses/${course}`);
+    // If the response is successful return the user data
+    if (response.status === 200) {
+      return response.json().then(data => data);
+    }
+
+    // If the response is unsuccessful return an unauthorized response
+    else if (response.status === 401) {
+      return null;
+    }
+
+    else {
+      throw new Error();
+    };
+  };
   
   // Method that generates a POST request to create a new user
   async createUser(user) {

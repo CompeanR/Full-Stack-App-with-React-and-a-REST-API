@@ -39,7 +39,7 @@ export default class CourseDetail extends Component {
                 <main>
                     <div className="actions--bar">
                         <div className="wrap">
-                            {/** If the user is authenticated and the userId match with courseId, render "Delete" and "Update" buttons */}
+                         {/** If the user is authenticated and the userId match with courseId, render "Delete" and "Update" buttons */}
                             {
                                 context.authenticatedUser ? (
                                     
@@ -53,7 +53,7 @@ export default class CourseDetail extends Component {
                                 ) : <></>
                             }
 
-                            {/** If the user is not authenticated just render the "Return to List" button */}
+                         {/** If the user is not authenticated just render the "Return to List" button */}
                             <Link to={'/'} className="button button-secondary" href="index.html">Return to List</Link>
                         </div>
                     </div>

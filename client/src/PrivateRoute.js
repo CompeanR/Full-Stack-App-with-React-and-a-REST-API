@@ -1,10 +1,10 @@
+// Import statements
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { Consumer } from './Context';
 
+// Stateless component that generates a private route
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log(Component)
-  console.log(rest)
   return (
     <Consumer>
       { context => (

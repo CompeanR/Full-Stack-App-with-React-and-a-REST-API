@@ -1,11 +1,15 @@
+// Import statements
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+// Import Provider context
 import { Provider } from './Context';
 
+// Import css styles
 import './styles/global.css';
+
 
 ReactDOM.render(
   <Provider>

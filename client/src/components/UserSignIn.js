@@ -17,23 +17,22 @@ export default class UserSignIn extends Component {
     const { emailAddress, password, errors, } = this.state;
 
     return (
-        <div className="form--centered">
-            <h1>Sign In</h1>
+      <div className="form--centered">
+        <h1>Sign In</h1>
 
-            <Form  cancel={this.cancel} errors={errors} submit={this.submit} submitButtonText="Sign In"
-              elements={() => (
-                <>
-                    <input id="emailAddress" name="emailAddress" type="text" value={emailAddress} onChange={this.change} placeholder="Email Address" />
-                    <input id="password" name="password" type="password" value={password} onChange={this.change} placeholder="Password" />                
-                </>
-              )} >
+        <Form  cancel={this.cancel} errors={errors} submit={this.submit} submitButtonText="Sign In"
+          elements={() => (
+            <>
+                <input id="emailAddress" name="emailAddress" type="text" value={emailAddress} onChange={this.change} placeholder="Email Address" />
+                <input id="password" name="password" type="password" value={password} onChange={this.change} placeholder="Password" />                
+            </>
+          )} >
+        </Form>
 
-            </Form>
-
-            <p>
-                Don't have a user account? Click here to<Link to="/signup"> sign up</Link>
-            </p>
-        </div>
+        <p>
+            Don't have a user account? Click here to<Link to="/signup"> sign up</Link>
+        </p>    
+      </div>
     );
   };
 

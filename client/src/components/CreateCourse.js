@@ -55,6 +55,7 @@ export default class CreateCourse extends Component {
             </>
         );
     };
+
     // Method that set the inputs into state
     change = (event) => {
         const name = event.target.name;
