@@ -19,7 +19,7 @@ export default class Courses extends Component {
         // If the request is unsuccessful redirect the user to "error" page
         .catch(err => {
             console.log('Error fetching and parsing data', err);
-            this.props.history.push('/error')
+            this.props.history.push('/unhandledError')
         });
     };
 

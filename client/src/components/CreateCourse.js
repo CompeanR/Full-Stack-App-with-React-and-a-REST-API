@@ -93,7 +93,7 @@ export default class CreateCourse extends Component {
             // If request is unsuccess redirect user to error page
             .catch( err => {
             console.log(err);
-            this.props.history.push('/error'); // push to history stack
+            this.props.history.push('/unhandledError'); // push to history stack
         });
     };
     

@@ -17,17 +17,15 @@ export default class Header extends Component {
                         {   
                             authUser ?
                             <>
-                                <ul>
-                                    <li>Welcome, {authUser.firstName} </li>
-                                    <li><Link to="/signout">Sign Out</Link></li>
-                                </ul>
+                                <span className="header--signedin">Welcome, {authUser.firstName}</span>
+                                <Link to="/signout"> Sign Out</Link>
                             </>
                         :
                             <>
-                                <ul className="header--signedout">
-                                    <li><Link to="/signup">Sign Up </Link></li>
-                                    <li><Link to="/signin">Sign In </Link></li>
-                                </ul>
+
+                                <Link to="/signup">Sign Up </Link>
+                                <Link to="/signin">Sign In </Link>
+
                             </>
                         }
                     </nav>

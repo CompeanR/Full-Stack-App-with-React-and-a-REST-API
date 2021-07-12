@@ -129,6 +129,8 @@ export default class UpdateCourse extends Component {
     
     // Method that redirect user to main page
     cancel = () => {
-        this.props.history.push('/');
+        const id = this.props.match.params.id
+
+        this.props.history.push(`/courses/${id}`);
     };
 };

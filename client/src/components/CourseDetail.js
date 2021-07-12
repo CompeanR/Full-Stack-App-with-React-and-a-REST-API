@@ -110,7 +110,7 @@ export default class CourseDetail extends Component {
             // If the request is unsuccess redirect the user to error page
             .catch(err => {
                 console.log(err);
-                this.props.history.push('/error')
+                this.props.history.push('/unhandledError')
             });
     };
 };
