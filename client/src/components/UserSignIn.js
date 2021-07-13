@@ -69,7 +69,7 @@ export default class UserSignIn extends Component {
           this.props.history.push(from);
         }
       })
-      // If request is unsuccessful redirect user to "/unhandledError" page
+      // If request is unsuccessful redirect user to "/error" page
       .catch(err => {
         console.log(err);
         this.props.history.push('/error');

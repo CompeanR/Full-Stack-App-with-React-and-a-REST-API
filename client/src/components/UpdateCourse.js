@@ -120,7 +120,7 @@ export default class UpdateCourse extends Component {
             else {
                 this.props.history.push(`/courses/${id}`);
             }})
-            // If request is unsuccess, redirect user to "/unhandledError" page
+            // If request is unsuccess, redirect user to "/error" page
             .catch( err => {
             console.log(err);
             this.props.history.push('/error');
