@@ -53,7 +53,7 @@ const App = () => (
         <PrivateRoute exact path="/courses/:id/update" component={UpdateCourseWithContext} />
         <Route exact path="/notfound" component={NotFound} />
         <Route exact path="/forbidden" component={Forbidden} />
-        <Route exact path="/unhandledError" component={UnhandledError} />
+        <Route exact path="/error" component={UnhandledError} />
 
         {/** If any route match, "NotFound" component will render */}
         <Route component={NotFound} />

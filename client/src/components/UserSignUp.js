@@ -82,7 +82,7 @@ export default class UserSignUp extends Component {
       // If request is unsuccessful redirect user to "/unhandledError" page
       .catch( err => {
         console.log(err);
-        this.props.history.push('/unhandledError'); 
+        this.props.history.push('/error'); 
       })
   };
 
