@@ -11,7 +11,7 @@ export default class Courses extends Component {
     
     // Mounting data from the API to state
     componentDidMount() {
-        axios.get('http://localhost:5000/api/courses').then(response => {
+        axios.get('/api/courses').then(response => {
             this.setState({
                 courses: response.data
             });

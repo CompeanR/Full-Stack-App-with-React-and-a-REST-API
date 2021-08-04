@@ -15,7 +15,7 @@ export default class CourseDetail extends Component {
     
     // Mounting data from the API to state
     componentDidMount() {
-        axios.get(`http://localhost:5000/api/courses/${this.props.match.params.id}`).then(response => {
+        axios.get(`/api/courses/${this.props.match.params.id}`).then(response => {
             this.setState({
                 course: response.data,
                 user: response.data.user
