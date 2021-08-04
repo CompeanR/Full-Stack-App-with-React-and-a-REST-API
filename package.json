@@ -1,29 +1,25 @@
 {
-  "name": "techdegree-fullstackjs-rest-api",
+  "name": "full-stack-app-with-react-and-a-rest-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "You're sections headers will be used to reference location of destination.",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon ./app.js",
-    "client": "cd client && npm start",
-    "seed": "cross-env DB_ENABLE_LOGGING=true node './seed'"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd api && npm install && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CompeanR/Full-Stack-App-with-React-and-a-REST-API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^1.18.3"
+  "bugs": {
+    "url": "https://github.com/CompeanR/Full-Stack-App-with-React-and-a-REST-API/issues"
   },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "cross-env": "^7.0.2",
-    "express": "^4.17.1",
-    "morgan": "^1.10.0",
-    "promise.prototype.finally": "^3.1.2",
-    "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0",
-    "sqlite3": "^5.0.0"
+  "homepage": "https://github.com/CompeanR/Full-Stack-App-with-React-and-a-REST-API#readme",
+  "engines": {
+    "node": "16.5.0"
   }
 }

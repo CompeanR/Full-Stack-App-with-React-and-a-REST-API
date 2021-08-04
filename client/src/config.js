@@ -1,6 +1,6 @@
 // API route
 const config = {
-  apiBaseUrl: 'http://localhost:5000/api',
+  apiBaseUrl: '/api/users',
 };
 
 export default config;

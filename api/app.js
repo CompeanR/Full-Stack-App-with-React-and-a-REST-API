@@ -6,7 +6,8 @@ const morgan = require('morgan');
 const { sequelize, models } = require('./models');
 const users = require('./routes/users');
 const courses = require('./routes/courses');
-const cors = require('cors')
+const cors = require('cors');
+const path = require('path');
 
 // variable to enable global error logging
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
@@ -23,6 +24,9 @@ app.use(express.json());
 // setup morgan which gives us http request logging
 app.use(morgan('dev'));
 
+// server - client
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 // setup a friendly greeting for the root route
 app.get('/', (req, res) => {
   res.json({
@@ -33,6 +37,11 @@ app.get('/', (req, res) => {
 // Add routes.
 app.use('/api', users);
 app.use('/api', courses);
+
+// get client side server
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // send 404 if no other route matched
 app.use((req, res) => {
