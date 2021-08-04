@@ -4,9 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "nodemon ./app.js",
     "client": "cd client && npm start",
     "seed": "cross-env DB_ENABLE_LOGGING=true node './seed'"
