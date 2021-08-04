@@ -61,13 +61,7 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);
 });
 
-// build process
-if (process.env.NODE_env === 'production') {
-  app.use(express.static('client/build'));
-}
-
 // Testing the connection.
-
 (async () => {
   try {
     // Test the connection to the database.
