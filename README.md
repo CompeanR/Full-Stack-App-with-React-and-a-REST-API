@@ -1,6 +1,7 @@
-# Full Stack App with React and a REST API 
+# Full Stack App with React and a REST API
 
 ### Table of Contents
+
 You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
@@ -11,7 +12,7 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-This is a Full Stack App with React and REST API
+This is a Full Stack App with React and REST API.
 
 #### Technologies
 
@@ -32,26 +33,25 @@ This is a Full Stack App with React and REST API
 ## How To Use
 
 #### Listeners
+
 - Go to API folder and run the command npm install
 
-    Install all the packages.
+  Install all the packages.
 
-- Then npm start 
+- Then npm start
 
-    Start the project in http://localhost:5000/
+  Start the project in http://localhost:5000/
 
 - Go to client folder and run the command npm install
 
-    Install all the packages.
+  Install all the packages.
 
-- Then npm start 
+- Then npm start
 
-    Start the project in http://localhost:3000/
-
+  Start the project in http://localhost:3000/
 
 ## Author Info
 
 - Twitter - [@JCompeann](https://twitter.com/JCompeann)
 
 [Back To The Top](#full-stack-app-with-react-and-a-rest-api)
-
