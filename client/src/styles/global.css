@@ -285,6 +285,7 @@ div.wrap {
     grid-auto-rows: 1fr;
   }
 }
+
 @media screen and (min-width: 800px) {
   .main--grid {
     grid-template-columns: 1fr 1fr 1fr;
